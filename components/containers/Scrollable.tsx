@@ -1,24 +1,23 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { DEFAULT_GAP, DEFAULT_PADDING } from "@/constants/globalStyles";
 import React, { ReactNode } from "react";
-import { Stack } from "expo-router";
+import { ScrollView, StyleSheet, View } from "react-native";
 
-type FullScreenProps = {
+type ScrollableProps = {
   children: ReactNode;
 };
 
-export default function Scrollable({ children }: FullScreenProps) {
+export default function Scrollable({ children }: ScrollableProps) {
   return (
-    <View style={styles.container}>
-      <Stack.Screen options={{ headerShown: false }} />
-
-      <ScrollView>{children}</ScrollView>
-    </View>
+    <ScrollView>
+      <View style={styles.container}>{children}</View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    padding: DEFAULT_PADDING,
+    gap: DEFAULT_GAP * 2,
   },
 });

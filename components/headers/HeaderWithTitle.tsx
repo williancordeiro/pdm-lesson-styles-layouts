@@ -7,5 +7,5 @@ type HeaderWithTitleProps = {
 };
 
 export default function HeaderWithTitle({ title }: HeaderWithTitleProps) {
-  return <Stack.Screen options={{ headerShown: true, title }} />;
+  return <Stack.Screen options={{ title }} />;
 }

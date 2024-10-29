@@ -1,18 +1,35 @@
 import { View, Text, StyleSheet } from "react-native";
-import React, { PropsWithChildren } from "react";
+import React, { ReactNode } from "react";
+import {
+  DEFAULT_GAP,
+  DEFAULT_PADDING,
+  DEFAULT_RADIUS,
+} from "@/constants/globalStyles";
 
-export default function Card({ children }: PropsWithChildren) {
-  return <View style={styles.container}>{children}</View>;
+type CardProps = {
+  title: string;
+  children: ReactNode;
+};
+
+export default function Card({ title, children }: CardProps) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>{title}</Text>
+      {children}
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "grey",
-    maxWidth: "90%",
-    borderWidth: 1,
-    borderColor: "black",
-    borderRadius: 4,
-    padding: 8,
+    backgroundColor: "white",
+    borderRadius: DEFAULT_RADIUS,
+    gap: DEFAULT_GAP,
+    padding: DEFAULT_PADDING,
     width: "100%",
+  },
+  title: {
+    fontWeight: "bold",
+    fontSize: 20,
   },
 });
