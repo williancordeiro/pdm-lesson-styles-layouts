@@ -38,7 +38,8 @@ export default function MainCard({
 
             <View style={styles.barContainer}>
               <View style={{ ...styles.bar, width: "80%" }} />
-            </View>
+            </View>paddingStart: 100,
+            paddingEnd: 100,
 
             <Text>{hp} / 1500 HP</Text>
           </View>
@@ -84,5 +85,13 @@ const styles = StyleSheet.create({
   },
   footer: {
     backgroundColor: "rgb(255 166 36)",
+    width: '100%',
+    paddingTop: 7,
+    paddingBottom: 7,
+    textAlign: 'center',
+    alignItems: 'center',
+    borderBottomEndRadius: 12,
+    borderBottomStartRadius: 12,
+    color: '#fff'
   },
 });

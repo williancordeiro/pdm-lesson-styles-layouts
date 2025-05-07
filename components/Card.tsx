@@ -8,7 +8,8 @@ export default function Card({ children }: PropsWithChildren) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "rgb(249 249 249)",
-    padding: 16,
+    //backgroundColor: '#DEDFDE',
+    paddingTop: 16,
     borderRadius: 12,
   },
 });
